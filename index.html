@@ -1,0 +1,709 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <title>Telmo Gorrochategui – Percussionist & Timpanist</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <meta name="description" content="Official website of classical percussionist and timpanist Telmo Gorrochategui." />  
+  
+  <style>  
+    * {  
+      box-sizing: border-box;  
+      margin: 0;  
+      padding: 0;  
+    }  
+  
+    body {  
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;  
+      line-height: 1.6;  
+      color: #111;  
+      background-color: #fafafa;  
+    }  
+  
+    a {  
+      color: inherit;  
+      text-decoration: none;  
+    }  
+  
+    img {  
+      max-width: 100%;  
+      display: block;  
+    }  
+  
+    /* HEADER & NAV */  
+    header {  
+      position: sticky;  
+      top: 0;  
+      z-index: 100;  
+      backdrop-filter: blur(8px);  
+      background-color: rgba(250, 250, 250, 0.9);  
+      border-bottom: 1px solid #e5e5e5;  
+    }  
+  
+    .nav-container {  
+      max-width: 1100px;  
+      margin: 0 auto;  
+      padding: 0.75rem 1.25rem;  
+      display: flex;  
+      align-items: center;  
+      justify-content: space-between;  
+    }  
+  
+    .logo {  
+      font-weight: 700;  
+      letter-spacing: 0.12em;  
+      text-transform: uppercase;  
+      font-size: 0.9rem;  
+    }  
+  
+    nav ul {  
+      list-style: none;  
+      display: flex;  
+      gap: 1.25rem;  
+      font-size: 0.9rem;  
+      text-transform: uppercase;  
+      letter-spacing: 0.08em;  
+    }  
+  
+    nav a {  
+      position: relative;  
+      padding-bottom: 0.15rem;  
+    }  
+  
+    nav a::after {  
+      content: "";  
+      position: absolute;  
+      left: 0;  
+      bottom: 0;  
+      width: 0;  
+      height: 1px;  
+      background-color: #111;  
+      transition: width 0.2s ease;  
+    }  
+  
+    nav a:hover::after {  
+      width: 100%;  
+    }  
+  
+    /* HERO */  
+    .hero {  
+      max-width: 1100px;  
+      margin: 0 auto;  
+      padding: 4rem 1.25rem 3rem;  
+      display: grid;  
+      gap: 2.5rem;  
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);  
+      align-items: center;  
+    }  
+  
+    .hero-title {  
+      font-size: clamp(2.3rem, 4vw, 3rem);  
+      font-weight: 700;  
+      letter-spacing: 0.06em;  
+      text-transform: uppercase;  
+      margin-bottom: 1rem;  
+    }  
+  
+    .hero-subtitle {  
+      font-size: 1.05rem;  
+      color: #555;  
+      margin-bottom: 1.5rem;  
+    }  
+  
+    .hero-buttons {  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 0.75rem;  
+      margin-top: 0.5rem;  
+    }  
+  
+    .btn {  
+      display: inline-flex;  
+      align-items: center;  
+      justify-content: center;  
+      padding: 0.65rem 1.35rem;  
+      border-radius: 999px;  
+      font-size: 0.9rem;  
+      text-transform: uppercase;  
+      letter-spacing: 0.08em;  
+      border: 1px solid #111;  
+      background-color: #111;  
+      color: #fafafa;  
+      cursor: pointer;  
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;  
+    }  
+  
+    .btn-outline {  
+      background-color: transparent;  
+      color: #111;  
+    }  
+  
+    .btn:hover {  
+      transform: translateY(-1px);  
+      background-color: #000;  
+      color: #fafafa;  
+    }  
+  
+    .btn-outline:hover {  
+      background-color: #111;  
+      color: #fafafa;  
+    }  
+  
+    .hero-photo {  
+      border-radius: 18px;  
+      overflow: hidden;  
+      background-color: #ddd;  
+      min-height: 260px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      font-size: 0.85rem;  
+      color: #555;  
+      text-align: center;  
+      padding: 1.5rem;  
+    }  
+  
+    /* SECTIONS */  
+    section {  
+      padding: 2.5rem 1.25rem;  
+    }  
+  
+    .section-inner {  
+      max-width: 1100px;  
+      margin: 0 auto;  
+    }  
+  
+    .section-title {  
+      text-transform: uppercase;  
+      letter-spacing: 0.12em;  
+      font-size: 0.95rem;  
+      color: #777;  
+      margin-bottom: 0.75rem;  
+    }  
+  
+    .section-heading {  
+      font-size: 1.5rem;  
+      margin-bottom: 1.5rem;  
+    }  
+  
+    /* BIO / CV */  
+    .bio-grid {  
+      display: grid;  
+      gap: 2rem;  
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);  
+    }  
+  
+    .bio-text p + p {  
+      margin-top: 0.75rem;  
+    }  
+  
+    .cv-list {  
+      list-style: none;  
+      font-size: 0.95rem;  
+    }  
+  
+    .cv-list li + li {  
+      margin-top: 0.35rem;  
+    }  
+  
+    .cv-label {  
+      font-weight: 600;  
+    }  
+  
+    /* MEDIA */  
+    .media-grid {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  
+      gap: 1.5rem;  
+    }  
+  
+    .media-card {  
+      background-color: #fff;  
+      border-radius: 14px;  
+      padding: 1rem;  
+      border: 1px solid #e6e6e6;  
+    }  
+  
+    .media-card h3 {  
+      font-size: 1rem;  
+      margin-bottom: 0.5rem;  
+    }  
+  
+    .media-placeholder {  
+      background-color: #ddd;  
+      border-radius: 10px;  
+      height: 180px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      font-size: 0.85rem;  
+      color: #555;  
+      margin-bottom: 0.75rem;  
+    }  
+  
+    .media-meta {  
+      font-size: 0.9rem;  
+      color: #666;  
+    }  
+  
+    /* AGENDA */  
+    .agenda-list {  
+      list-style: none;  
+      border-top: 1px solid #e5e5e5;  
+      margin-top: 0.5rem;  
+    }  
+  
+    .agenda-item {  
+      padding: 0.85rem 0;  
+      border-bottom: 1px solid #e5e5e5;  
+      display: grid;  
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 2.5fr) minmax(0, 1.5fr);  
+      gap: 0.75rem;  
+      font-size: 0.95rem;  
+    }  
+  
+    .agenda-date {  
+      font-weight: 600;  
+      white-space: nowrap;  
+    }  
+  
+    .agenda-title {  
+      font-weight: 500;  
+    }  
+  
+    .agenda-location {  
+      color: #555;  
+    }  
+  
+    /* PORTFOLIO */  
+    .portfolio-grid {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  
+      gap: 1.5rem;  
+    }  
+  
+    .portfolio-card {  
+      background-color: #fff;  
+      border-radius: 14px;  
+      padding: 1.1rem 1.1rem 1.2rem;  
+      border: 1px solid #e6e6e6;  
+    }  
+  
+    .portfolio-card h3 {  
+      font-size: 1.05rem;  
+      margin-bottom: 0.35rem;  
+    }  
+  
+    .portfolio-role {  
+      font-size: 0.9rem;  
+      color: #777;  
+      margin-bottom: 0.5rem;  
+    }  
+  
+    .portfolio-card p {  
+      font-size: 0.93rem;  
+      color: #444;  
+    }  
+  
+    .portfolio-tags {  
+      margin-top: 0.6rem;  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 0.4rem;  
+      font-size: 0.75rem;  
+      text-transform: uppercase;  
+      letter-spacing: 0.08em;  
+    }  
+  
+    .tag {  
+      border-radius: 999px;  
+      border: 1px solid #ddd;  
+      padding: 0.25rem 0.6rem;  
+    }  
+  
+    /* TEACHING */  
+    .teaching-layout {  
+      display: grid;  
+      gap: 2rem;  
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);  
+    }  
+  
+    .teaching-layout p + p {  
+      margin-top: 0.75rem;  
+    }  
+  
+    .teaching-highlights {  
+      list-style: none;  
+      font-size: 0.95rem;  
+      border-radius: 14px;  
+      border: 1px solid #e5e5e5;  
+      padding: 0.95rem 1.1rem;  
+      background-color: #fff;  
+    }  
+  
+    .teaching-highlights li + li {  
+      margin-top: 0.4rem;  
+    }  
+  
+    .teaching-label {  
+      font-weight: 600;  
+    }  
+  
+    /* FOOTER / CONTACT */  
+    footer {  
+      padding: 2.5rem 1.25rem 2rem;  
+      border-top: 1px solid #e5e5e5;  
+      margin-top: 2rem;  
+      background-color: #f3f3f3;  
+    }  
+  
+    .footer-inner {  
+      max-width: 1100px;  
+      margin: 0 auto;  
+      display: grid;  
+      gap: 1.5rem;  
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);  
+      font-size: 0.9rem;  
+      color: #555;  
+    }  
+  
+    .footer-title {  
+      text-transform: uppercase;  
+      letter-spacing: 0.12em;  
+      font-size: 0.85rem;  
+      margin-bottom: 0.35rem;  
+    }  
+  
+    .footer-inner a {  
+      text-decoration: underline;  
+      text-decoration-thickness: 1px;  
+      text-underline-offset: 2px;  
+    }  
+  
+    .footer-bottom {  
+      max-width: 1100px;  
+      margin: 1.25rem auto 0;  
+      text-align: right;  
+      font-size: 0.8rem;  
+      color: #888;  
+    }  
+  
+    /* RESPONSIVE */  
+    @media (max-width: 800px) {  
+      .hero {  
+        grid-template-columns: minmax(0, 1fr);  
+        padding-top: 3rem;  
+      }  
+      .hero-photo {  
+        order: -1;  
+      }  
+      .bio-grid,  
+      .teaching-layout {  
+        grid-template-columns: minmax(0, 1fr);  
+      }  
+      .agenda-item {  
+        grid-template-columns: minmax(0, 1fr);  
+      }  
+      nav ul {  
+        gap: 0.75rem;  
+        font-size: 0.8rem;  
+      }  
+      .nav-container {  
+        flex-wrap: wrap;  
+        gap: 0.5rem;  
+      }  
+    }  
+  </style>  
+</head>  
+<body>  
+  
+  <!-- HEADER -->  
+  <header>  
+    <div class="nav-container">  
+      <div class="logo">TELMO GORROCHATEGUI</div>  
+      <nav>  
+        <ul>  
+          <li><a href="#bio">Bio / CV</a></li>  
+          <li><a href="#media">Media</a></li>  
+          <li><a href="#agenda">Concerts</a></li>  
+          <li><a href="#portfolio">Projects</a></li>  
+          <li><a href="#teaching">Teaching</a></li>  
+          <li><a href="#contact">Contact</a></li>  
+        </ul>  
+      </nav>  
+    </div>  
+  </header>  
+  
+  <!-- HERO -->  
+  <main>  
+    <section class="hero">  
+      <div>  
+        <h1 class="hero-title">Percussionist & Timpanist</h1>  
+        <p class="hero-subtitle">  
+          Classical percussionist and timpanist based in the Netherlands and Spain, combining orchestral playing,  
+          contemporary music and street-percussion projects.  
+        </p>  
+        <div class="hero-buttons">  
+          <a href="#agenda" class="btn">Upcoming concerts</a>  
+          <a href="#portfolio" class="btn btn-outline">Projects &amp; ensembles</a>  
+        </div>  
+      </div>  
+  
+      <div class="hero-photo">  
+        <!-- Replace this with an actual <img> tag for your photo -->  
+        <p>Professional portrait photo here<br /><br />  
+        e.g. &lt;img src="img/telmo-portrait.jpg" alt="Telmo Gorrochategui"&gt;</p>  
+      </div>  
+    </section>  
+  
+    <!-- BIO / CV -->  
+    <section id="bio">  
+      <div class="section-inner">  
+        <div class="section-title">Bio / CV</div>  
+        <h2 class="section-heading">About Telmo</h2>  
+  
+        <div class="bio-grid">  
+          <div class="bio-text">  
+            <p>  
+              Telmo Gorrochategui is a classical percussionist and timpanist from the Basque Country, currently  
+              based in the Netherlands. He studied classical percussion at the Conservatorium van Amsterdam,  
+              where he worked with teachers such as Bence Major, Mark Braafhart, Bart Jansen, Richard Jansen and  
+              Rachel Xi Zhang.  
+            </p>  
+            <p>  
+              Telmo is active as an orchestral player and freelancer, and has performed with ensembles and  
+              orchestras including Het Balletorkest, Antwerp Symphony Orchestra, Amsterdam Sinfonietta and members  
+              of the Concertgebouw Orchestra. His musical interests range from symphonic repertoire to new music,  
+              chamber music and world-rhythm street percussion.  
+            </p>  
+            <p>  
+              In 2025 he won the percussion/timpani audition for a trial period with the Bilbao Orkestra Sinfonikoa  
+              (Bilbao Symphony Orchestra), further strengthening his connection between the Dutch and Spanish musical  
+              scenes.  
+            </p>  
+          </div>  
+  
+          <div>  
+            <ul class="cv-list">  
+              <li><span class="cv-label">Name:</span> Telmo Gorrochategui Nanclares</li>  
+              <li><span class="cv-label">Instrument:</span> Classical Percussion &amp; Timpani</li>  
+              <li><span class="cv-label">Based in:</span> Amsterdam (NL) / Bilbao (ES)</li>  
+              <li><span class="cv-label">Education:</span> Bachelor of Music, Classical Percussion<br />  
+                Conservatorium van Amsterdam</li>  
+              <li><span class="cv-label">Selected teachers:</span> Bence Major, Mark Braafhart, Bart Jansen,  
+                Richard Jansen, Rachel Xi Zhang</li>  
+              <li><span class="cv-label">Languages:</span> Spanish, Basque, English, Dutch (basic)</li>  
+              <li><span class="cv-label">Download CV:</span> <a href="#" target="_blank" rel="noreferrer">PDF on request</a></li>  
+            </ul>  
+          </div>  
+        </div>  
+      </div>  
+    </section>  
+  
+    <!-- MEDIA: PHOTOS & VIDEOS -->  
+    <section id="media">  
+      <div class="section-inner">  
+        <div class="section-title">Media</div>  
+        <h2 class="section-heading">Photos &amp; Videos</h2>  
+  
+        <div class="media-grid">  
+          <div class="media-card">  
+            <div class="media-placeholder">  
+              Main orchestral portrait – replace with photo  
+            </div>  
+            <h3>Orchestral portrait</h3>  
+            <p class="media-meta">Photo: &lt;photographer name&gt;</p>  
+          </div>  
+  
+          <div class="media-card">  
+            <div class="media-placeholder">  
+              Embed a YouTube video here<br /><br />  
+              e.g. &lt;iframe src="https://www.youtube.com/embed/VIDEO_ID" ...&gt;  
+            </div>  
+            <h3>Concerto / solo performance</h3>  
+            <p class="media-meta">Selected solo or concerto excerpt (marimba, vibraphone or multi-percussion).</p>  
+          </div>  
+  
+          <div class="media-card">  
+            <div class="media-placeholder">  
+              Ensemble / project photography  
+            </div>  
+            <h3>Ensemble &amp; project photos</h3>  
+            <p class="media-meta">Photos with Kolpez Blai, chamber music projects or contemporary ensembles.</p>  
+          </div>  
+        </div>  
+      </div>  
+    </section>  
+  
+    <!-- CONCERT AGENDA -->  
+    <section id="agenda">  
+      <div class="section-inner">  
+        <div class="section-title">Concert agenda</div>  
+        <h2 class="section-heading">Upcoming performances</h2>  
+        <p style="max-width: 640px; margin-bottom: 1rem;">  
+          Below is a selection of upcoming concerts. For a complete and updated list, please get in touch or follow  
+          Telmo on social media.  
+        </p>  
+  
+        <ul class="agenda-list">  
+          <!-- Replace all dates/works with your real agenda -->  
+          <li class="agenda-item">  
+            <div class="agenda-date">14–16 Feb 2026</div>  
+            <div class="agenda-title">  
+              Bilbao Orkestra Sinfonikoa – Symphonic programme<br />  
+              <span style="color:#666;">Works by Ravel, de Falla and Debussy</span>  
+            </div>  
+            <div class="agenda-location">Palacio Euskalduna, Bilbao (ES)</div>  
+          </li>  
+  
+          <li class="agenda-item">  
+            <div class="agenda-date">5 Mar 2026</div>  
+            <div class="agenda-title">  
+              Chamber percussion recital<br />  
+              <span style="color:#666;">Marimba &amp; vibraphone duo programme</span>  
+            </div>  
+            <div class="agenda-location">Amsterdam (NL)</div>  
+          </li>  
+  
+          <li class="agenda-item">  
+            <div class="agenda-date">Summer 2026</div>  
+            <div class="agenda-title">  
+              Kolpez Blai – Street percussion shows<br />  
+              <span style="color:#666;">Festival appearances in Spain &amp; France</span>  
+            </div>  
+            <div class="agenda-location">Various cities (ES / FR)</div>  
+          </li>  
+        </ul>  
+      </div>  
+    </section>  
+  
+    <!-- PORTFOLIO / PROJECTS -->  
+    <section id="portfolio">  
+      <div class="section-inner">  
+        <div class="section-title">Portfolio</div>  
+        <h2 class="section-heading">Projects, ensembles &amp; artistic work</h2>  
+  
+        <div class="portfolio-grid">  
+          <article class="portfolio-card">  
+            <h3>Orchestral playing &amp; guest work</h3>  
+            <div class="portfolio-role">Timpani &amp; percussion – freelance</div>  
+            <p>  
+              Regular work as an orchestral percussionist and timpanist, with experience in ballet, opera and  
+              symphonic repertoire. Collaborations include orchestras such as Het Balletorkest, Antwerp Symphony  
+              Orchestra, Amsterdam Sinfonietta and projects with members of the Concertgebouw Orchestra.  
+            </p>  
+            <div class="portfolio-tags">  
+              <span class="tag">orchestra</span>  
+              <span class="tag">timpani</span>  
+              <span class="tag">section playing</span>  
+            </div>  
+          </article>  
+  
+          <article class="portfolio-card">  
+            <h3>Kolpez Blai – Street percussion group</h3>  
+            <div class="portfolio-role">Core member &amp; artistic/organisation team</div>  
+            <p>  
+              Street-percussion project working with Latin, Brazilian and world-rhythm influences. Performances at  
+              festivals, parades and open-air events, combining powerful rhythmic grooves with audience interaction  
+              and visual choreography.  
+            </p>  
+            <div class="portfolio-tags">  
+              <span class="tag">street percussion</span>  
+              <span class="tag">festival</span>  
+              <span class="tag">rhythm</span>  
+            </div>  
+          </article>  
+  
+          <article class="portfolio-card">  
+            <h3>Chamber music &amp; solo projects</h3>  
+            <div class="portfolio-role">Marimba, vibraphone &amp; multi-percussion</div>  
+            <p>  
+              Chamber projects with mixed ensembles, percussion duos and contemporary music groups.  
+              Repertoire includes original works and arrangements for marimba, vibraphone, multi-percussion  
+              and electronics, often in collaboration with young composers.  
+            </p>  
+            <div class="portfolio-tags">  
+              <span class="tag">chamber music</span>  
+              <span class="tag">contemporary</span>  
+              <span class="tag">solo</span>  
+            </div>  
+          </article>  
+        </div>  
+      </div>  
+    </section>  
+  
+    <!-- TEACHING -->  
+    <section id="teaching">  
+      <div class="section-inner">  
+        <div class="section-title">Teaching</div>  
+        <h2 class="section-heading">Teaching profile &amp; vision</h2>  
+  
+        <div class="teaching-layout">  
+          <div>  
+            <p>  
+              As a teacher, Telmo aims to combine a solid technical foundation with musical imagination and a healthy,  
+              sustainable approach to practice. His experience ranges from young beginners to advanced students preparing  
+              for conservatoire auditions.  
+            </p>  
+            <p>  
+              Lessons can focus on orchestral repertoire, solo literature, rhythm &amp; coordination, reading skills,  
+              audition preparation or general musicianship. A key element in his teaching is helping each student find  
+              an individual sound and a personal, convincing musical narrative.  
+            </p>  
+            <p>  
+              Telmo believes that learning percussion should be both structured and enjoyable: clear goals, efficient  
+              practice strategies and honest feedback, combined with curiosity, creativity and joy in playing.  
+            </p>  
+          </div>  
+  
+          <ul class="teaching-highlights">  
+            <li>  
+              <span class="teaching-label">Focus areas:</span>  
+              orchestral percussion &amp; timpani, solo marimba/vibraphone, rhythm training, audition preparation.  
+            </li>  
+            <li>  
+              <span class="teaching-label">Teaching formats:</span>  
+              individual lessons, sectional coaching, rhythm workshops for ensembles and street-percussion groups.  
+            </li>  
+            <li>  
+              <span class="teaching-label">Method:</span>  
+              combination of sound-oriented technique, slow practice, listening, score study and mental preparation.  
+            </li>  
+            <li>  
+              <span class="teaching-label">Location:</span>  
+              lessons possible in Amsterdam / Bilbao or online (video call).  
+            </li>  
+          </ul>  
+        </div>  
+      </div>  
+    </section>  
+  </main>  
+  
+  <!-- FOOTER / CONTACT -->  
+  <footer id="contact">  
+    <div class="footer-inner">  
+      <div>  
+        <div class="footer-title">Bookings &amp; orchestral work</div>  
+        <p>  
+          For orchestral extra work, chamber music projects or festival bookings, please use the e-mail address below.  
+        </p>  
+      </div>  
+      <div>  
+        <div class="footer-title">Contact</div>  
+        <p>  
+          E-mail: <a href="mailto:your.email@example.com">your.email@example.com</a><br />  
+          Instagram: <a href="#" target="_blank" rel="noreferrer">@your.instagram</a>  
+        </p>  
+      </div>  
+    </div>  
+    <div class="footer-bottom">  
+      &copy; <span id="year"></span> Telmo Gorrochategui – All rights reserved.  
+    </div>  
+  </footer>  
+  
+  <script>  
+    // Set the current year in the footer automatically  
+    document.getElementById('year').textContent = new Date().getFullYear();  
+  </script>  
+</body>  
+</html>  
